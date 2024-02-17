@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Calendar from "react-calendar";
 
 function DonateBlood() {
+  const [date, setDate] = useState(new Date());
   const [donorInfo, setDonorInfo] = useState({
-    name: '',
-    bloodType: '',
-    contactNumber: '',
-    email: '',
-    address: '',
+    name: "",
+    bloodType: "",
+    contactNumber: "",
+    email: "",
+    address: "",
   });
 
   const handleChange = (e) => {
@@ -17,24 +19,31 @@ function DonateBlood() {
     }));
   };
 
+
+  const onChange = (newDate) => {
+    setDate(newDate);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your logic here to handle the form submission
-    console.log('Donor Information:', donorInfo);
+    console.log("Donor Information:", donorInfo);
     // Reset the form after submission
     setDonorInfo({
-      name: '',
-      bloodType: '',
-      contactNumber: '',
-      email: '',
-      address: '',
+      name: "",
+      bloodType: "",
+      contactNumber: "",
+      email: "",
+      address: "",
     });
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
-        <h2 className="text-3xl font-semibold mb-6 text-center text-red-500">Donate Blood</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center text-red-500">
+          Donate Blood
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-sm font-semibold text-gray-600 mb-2">
@@ -105,11 +114,15 @@ function DonateBlood() {
               required
             ></textarea>
           </div>
+<div>
+<Calendar onChange={onChange} value={date} />
+        <p>Selected Date: {date.toDateString()}</p>
+</div>
           <button
             type="submit"
             className="w-full bg-red-300 text-white font-semibold py-2 rounded-md hover:bg-green-300 transition-all duration-300 focus:outline-none focus:bg-red-600"
           >
-            Donate Now
+            Book Appointment
           </button>
         </form>
       </div>

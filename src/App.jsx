@@ -5,6 +5,8 @@ import AppLayout from "./ui/Applayout";
 import Dashboard from "./Dashboard/Dashboard";
 import DonateBlood from "./Dashboard/DonateBlood";
 import RequestBlood from "./Dashboard/RequestBlood";
+import Appointments from "./Dashboard/Appointments";
+import CreateUser from "./features/users/CreateUser";
 import Error from "./ui/Error";
 
 const router = createBrowserRouter([
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
       { path: "/", element: <Dashboard />, errorElement: <Error /> },
       { path: "/donate", element: <DonateBlood />, errorElement: <Error /> },
       { path: "/request", element: <RequestBlood />, errorElement: <Error /> },
+      { path: "/appointments", element: <Appointments />, errorElement: <Error />},
+      { path: "/createuser", element: <CreateUser/>, errorElement: <Error />}
     ],
   },
 ]);

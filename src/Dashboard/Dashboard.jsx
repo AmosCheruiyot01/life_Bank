@@ -13,6 +13,11 @@ function Dashboard() {
         <p onClick={() => navigate('/request')} className=" text-2xl font-semibold capitalize  border-b-2 hover:border-red-400  border-gray-400">
           request blood
         </p>
+        <select name="appointments" id="" className=" text-2xl font-semibold capitalize  border-b-2 hover:border-red-400  border-gray-400">
+          <option value="">appointments</option>
+          <option value="">app 2</option>
+          <option value="">app 3</option>
+        </select>
         <input
           type="text"
           className="focus:outline-none ring rounded ring-gray-400 focus:ring-red-400 transition-all duration-300 
