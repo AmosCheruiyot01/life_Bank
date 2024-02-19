@@ -8,6 +8,7 @@ import RequestBlood from "./Dashboard/RequestBlood";
 import Appointments from "./Dashboard/Appointments";
 import CreateUser from "./features/users/CreateUser";
 import Error from "./ui/Error";
+import Search from "./Dashboard/Search";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
       { path: "/donate", element: <DonateBlood />, errorElement: <Error /> },
       { path: "/request", element: <RequestBlood />, errorElement: <Error /> },
       { path: "/appointments", element: <Appointments />, errorElement: <Error />},
-      { path: "/createuser", element: <CreateUser/>, errorElement: <Error />}
+      { path: "/createuser", element: <CreateUser/>, errorElement: <Error />},
+      { path: "/search", element: <Search/>, errorElement: <Error />}
     ],
   },
 ]);
